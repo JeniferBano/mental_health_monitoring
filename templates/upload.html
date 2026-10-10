@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Upload fMRI Scan</title>
+<link rel="stylesheet" href="{{
+ url_for('static',
+ filename='css/style.css') }}">
+</head>
+<body class="mbody">
+<nav class="tbar">
+    <div class="tleft">
+        🧠 Mental Health System
+    </div>
+    <div class="tright">
+        <a href="/dashboard">
+            Dashboard
+        </a>
+        <a href="/logout"
+         class="btn-out">Logout</a>
+    </div>
+</nav>
+<div class="pg">
+    <div class="phd">
+        <h2>🧠 Upload fMRI Brain Scan</h2>
+        <p>AI will analyze your brain
+        scan and detect mental health
+        conditions automatically</p>
+    </div>
+    {% if error %}
+    <div class="err-box">
+        ⚠️ {{ error }}
+    </div>
+    {% endif %}
+    <div class="ucard">
+        <div class="hw">
+            <h3>How AI Works:</h3>
+            <div class="srow2">
+                <div class="sbx">
+                    <div class="sn">1</div>
+                    <p>Upload .nii.gz
+                    fMRI file</p>
+                </div>
+                <span class="ar">→</span>
+                <div class="sbx">
+                    <div class="sn">2</div>
+                    <p>Extract features
+                    from 116 brain
+                    regions</p>
+                </div>
+                <span class="ar">→</span>
+                <div class="sbx">
+                    <div class="sn">3</div>
+                    <p>SVM classifies
+                    condition</p>
+                </div>
+                <span class="ar">→</span>
+                <div class="sbx">
+                    <div class="sn">4</div>
+                    <p>Result shown
+                    instantly</p>
+                </div>
+            </div>
+        </div>
+        <form method="POST"
+         action="/upload"
+         enctype="multipart/form-data">
+            <div class="fzone">
+                <input type="file"
+                 name="scan"
+                 id="fi"
+                 accept=".nii,.gz"
+                 required
+                 onchange="showF(this)">
+                <label for="fi">
+                    <div class="fico">🧠
+                    </div>
+                    <p id="flbl">
+                        Click to select
+                        fMRI scan file
+                    </p>
+                    <small>
+                        .nii or .nii.gz
+                    </small>
+                </label>
+            </div>
+            <button type="submit"
+             class="btn-an">
+                🔬 Analyze Brain Scan
+            </button>
+        </form>
+    </div>
+</div>
+<script>
+function showF(input) {
+    if (input.files.length > 0) {
+        document.getElementById(
+            'flbl'
+        ).textContent =
+            '✅ ' + input.files[0].name;
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Mental Health Chatbot</title>
+<link rel="stylesheet" href="{{
+ url_for('static',
+ filename='css/style.css') }}">
+</head>
+<body class="mbody">
+<nav class="tbar">
+    <div class="tleft">
+        🧠 Mental Health System
+    </div>
+    <div class="tright">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout"
+         class="btn-out">Logout</a>
+    </div>
+</nav>
+<div class="pg">
+<div class="cwrap">
+    <div class="chd">
+        <div class="bpic">🤖</div>
+        <div>
+            <h2>Mental Health Assistant
+            </h2>
+            <p>🟢 AI Powered — Online 24/7
+            </p>
+        </div>
+    </div>
+    <div class="cbox" id="cBox">
+        <div class="cm bot-cm">
+            <div class="cpic">🤖</div>
+            <div class="cbbl">
+                Hello {{ name }}! 👋
+                I am your AI Mental Health
+                Assistant. Ask me about
+                depression, anxiety, stress,
+                sleep, or brain scan upload!
+                I am here for you 💙
+            </div>
+        </div>
+    </div>
+    <div class="cin">
+        <input type="text"
+         id="mi"
+         placeholder=
+         "Type your message..."
+         onkeypress="ek(event)">
+        <button class="btn-s"
+         onclick="sm()">Send ➤</button>
+    </div>
+    <div class="qq">
+        <span>Quick:</span>
+        <button onclick=
+         "qm('I feel depressed')">
+            😔 Depression
+        </button>
+        <button onclick=
+         "qm('I have anxiety')">
+            😰 Anxiety
+        </button>
+        <button onclick=
+         "qm('I feel stressed')">
+            😓 Stress
+        </button>
+        <button onclick=
+         "qm('I cannot sleep')">
+            😴 Sleep
+        </button>
+        <button onclick=
+         "qm('How to upload scan')">
+            🧠 Scan Help
+        </button>
+    </div>
+</div>
+</div>
+<script>
+function sm() {
+    const i =
+        document.getElementById('mi');
+    const msg = i.value.trim();
+    if (!msg) return;
+    am(msg, 'user');
+    i.value = '';
+    fetch('/chat', {
+        method: 'POST',
+        headers: {
+            'Content-Type':
+            'application/json'
+        },
+        body: JSON.stringify(
+            {message: msg}
+        )
+    })
+    .then(r => r.json())
+    .then(d => {
+        if (d.response) am(d.response, 'bot');
+    })
+    .catch(() => am(
+        "Error connecting. Try again!",
+        'bot'
+    ));
+}
+function am(text, who) {
+    const b =
+        document.getElementById('cBox');
+    const d =
+        document.createElement('div');
+    d.className = `cm ${who}-cm`;
+    const p =
+        document.createElement('div');
+    p.className = 'cpic';
+    p.textContent =
+        who === 'bot' ? '🤖' : '👤';
+    const bb =
+        document.createElement('div');
+    bb.className = 'cbbl';
+    bb.textContent = text;
+    if (who === 'bot') {
+        d.appendChild(p);
+        d.appendChild(bb);
+    } else {
+        d.appendChild(bb);
+        d.appendChild(p);
+    }
+    b.appendChild(d);
+    b.scrollTop = b.scrollHeight;
+}
+function qm(msg) {
+    document.getElementById('mi')
+        .value = msg;
+    sm();
+}
+function ek(e) {
+    if (e.key === 'Enter') sm();
+}
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Mental Health Chatbot</title>
+<link rel="stylesheet" href="{{
+ url_for('static',
+ filename='css/style.css') }}">
+</head>
+<body class="mbody">
+<nav class="tbar">
+    <div class="tleft">
+        🧠 Mental Health System
+    </div>
+    <div class="tright">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout"
+         class="btn-out">Logout</a>
+    </div>
+</nav>
+<div class="pg">
+<div class="cwrap">
+    <div class="chd">
+        <div class="bpic">🤖</div>
+        <div>
+            <h2>Mental Health Assistant
+            </h2>
+            <p>🟢 AI Powered — Online 24/7
+            </p>
+        </div>
+    </div>
+    <div class="cbox" id="cBox">
+        <div class="cm bot-cm">
+            <div class="cpic">🤖</div>
+            <div class="cbbl">
+                Hello {{ name }}! 👋
+                I am your AI Mental Health
+                Assistant. Ask me about
+                depression, anxiety, stress,
+                sleep, or brain scan upload!
+                I am here for you 💙
+            </div>
+        </div>
+    </div>
+    <div class="cin">
+        <input type="text"
+         id="mi"
+         placeholder=
+         "Type your message..."
+         onkeypress="ek(event)">
+        <button class="btn-s"
+         onclick="sm()">Send ➤</button>
+    </div>
+    <div class="qq">
+        <span>Quick:</span>
+        <button onclick=
+         "qm('I feel depressed')">
+            😔 Depression
+        </button>
+        <button onclick=
+         "qm('I have anxiety')">
+            😰 Anxiety
+        </button>
+        <button onclick=
+         "qm('I feel stressed')">
+            😓 Stress
+        </button>
+        <button onclick=
+         "qm('I cannot sleep')">
+            😴 Sleep
+        </button>
+        <button onclick=
+         "qm('How to upload scan')">
+            🧠 Scan Help
+        </button>
+    </div>
+</div>
+</div>
+<script>
+function sm() {
+    const i =
+        document.getElementById('mi');
+    const msg = i.value.trim();
+    if (!msg) return;
+    am(msg, 'user');
+    i.value = '';
+    fetch('/chat', {
+        method: 'POST',
+        headers: {
+            'Content-Type':
+            'application/json'
+        },
+        body: JSON.stringify(
+            {message: msg}
+        )
+    })
+    .then(r => r.json())
+    .then(d => {
+        if (d.response) am(d.response, 'bot');
+    })
+    .catch(() => am(
+        "Error connecting. Try again!",
+        'bot'
+    ));
+}
+function am(text, who) {
+    const b =
+        document.getElementById('cBox');
+    const d =
+        document.createElement('div');
+    d.className = `cm ${who}-cm`;
+    const p =
+        document.createElement('div');
+    p.className = 'cpic';
+    p.textContent =
+        who === 'bot' ? '🤖' : '👤';
+    const bb =
+        document.createElement('div');
+    bb.className = 'cbbl';
+    bb.textContent = text;
+    if (who === 'bot') {
+        d.appendChild(p);
+        d.appendChild(bb);
+    } else {
+        d.appendChild(bb);
+        d.appendChild(p);
+    }
+    b.appendChild(d);
+    b.scrollTop = b.scrollHeight;
+}
+function qm(msg) {
+    document.getElementById('mi')
+        .value = msg;
+    sm();
+}
+function ek(e) {
+    if (e.key === 'Enter') sm();
+}
+</script>
+</body>
+</html>

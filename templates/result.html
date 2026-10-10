@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scan Result</title>
+<link rel="stylesheet" href="{{
+ url_for('static',
+ filename='css/style.css') }}">
+</head>
+<body class="mbody">
+<nav class="tbar">
+    <div class="tleft">
+        🧠 Mental Health System
+    </div>
+    <div class="tright">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout"
+         class="btn-out">Logout</a>
+    </div>
+</nav>
+<div class="pg">
+<div class="rwrap">
+    <h2>🔬 AI Analysis Complete</h2>
+    <div class="rcard">
+        <div class="remo">
+            {% if condition ==
+            'Depression' %}🔴
+            {% elif condition ==
+            'Normal' %}🟢
+            {% else %}🟡{% endif %}
+        </div>
+        <h1 class="rtitle">
+            {{ condition }}
+        </h1>
+        <div class="rgrid">
+            <div class="rbox">
+                <div class="rlbl">
+                    Confidence
+                </div>
+                <div class="rval">
+                    {{ confidence }}%
+                </div>
+            </div>
+            <div class="rbox">
+                <div class="rlbl">
+                    Risk Level
+                </div>
+                <div class="rval
+                 risk-{{risk|lower}}">
+                    {{ risk }}
+                </div>
+            </div>
+            <div class="rbox">
+                <div class="rlbl">
+                    AI Model
+                </div>
+                <div class="rval">SVM</div>
+            </div>
+        </div>
+        <div class="rmsg">
+            {% if condition ==
+            'Depression' %}
+            <p>⚠️ Depression indicators
+            detected. Please consult a
+            mental health professional
+            immediately. Early treatment
+            leads to full recovery! 💙</p>
+            {% elif condition ==
+            'Normal' %}
+            <p>✅ No significant mental
+            health concerns detected!
+            Continue healthy lifestyle
+            and regular check-ups! 🌟</p>
+            {% else %}
+            <p>⚡ Anxiety indicators
+            found. Speaking with a
+            counselor helps. Try
+            breathing exercises and
+            mindfulness! 🌈</p>
+            {% endif %}
+        </div>
+        <div class="ract">
+            <a href="/chatbot"
+             class="rbtn purple">
+                💬 Talk to Chatbot
+            </a>
+            <a href="/upload"
+             class="rbtn blue">
+                🧠 New Scan
+            </a>
+            <a href="/dashboard"
+             class="rbtn green">
+                📊 Dashboard
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

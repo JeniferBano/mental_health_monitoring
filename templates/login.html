@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+ content="width=device-width,
+ initial-scale=1.0">
+<title>MindCare AI — Mental Health Platform</title>
+<link rel="stylesheet" href="{{
+ url_for('static',
+ filename='css/style.css') }}">
+<link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="landing-body">
+
+<!-- HERO SECTION TOP -->
+<header class="site-header">
+    <div class="header-inner">
+        <div class="site-logo">
+            <i class="fas fa-brain
+             logo-icon"></i>
+            <span>MindCare AI</span>
+        </div>
+        <nav class="site-nav">
+            <a href="#features">
+                Features
+            </a>
+            <a href="#how">How It Works</a>
+            <a href="#doctors">Doctors</a>
+            <button class="nav-login-btn"
+             onclick="showPanel('login')">
+                Sign In
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- MAIN LAYOUT -->
+<main class="main-layout">
+
+    <!-- LEFT: Landing Content -->
+    <section class="land-section">
+
+        <div class="hero-badge">
+            <i class="fas fa-shield-alt">
+            </i>
+            AI-Powered Mental Health
+            Platform
+        </div>
+
+        <h1 class="hero-title">
+            Your Mind Deserves
+            <span class="hero-grad">
+                Expert Care
+            </span>
+        </h1>
+
+        <p class="hero-sub">
+            Advanced fMRI brain analysis
+            combined with AI detection
+            and real doctor consultations
+            — all in one secure platform.
+        </p>
+
+        <!-- Feature Pills -->
+        <div class="feature-pills"
+         id="features">
+            <div class="pill">
+                <div class="pill-icon
+                 blue">
+                    <i class="fas
+                     fa-microscope">
+                    </i>
+                </div>
+                <div class="pill-text">
+                    <strong>
+                        fMRI Analysis
+                    </strong>
+                    <span>
+                        116 brain regions
+                    </span>
+                </div>
+            </div>
+            <div class="pill">
+                <div class="pill-icon
+                 teal">
+                    <i class="fas
+                     fa-robot">
+                    </i>
+                </div>
+                <div class="pill-text">
+                    <strong>
+                        SVM Classifier
+                    </strong>
+                    <span>
+                        85% accuracy
+                    </span>
+                </div>
+            </div>
+            <div class="pill">
+                <div class="pill-icon
+                 purple">
+                    <i class="fas
+                     fa-comments">
+                    </i>
+                </div>
+                <div class="pill-text">
+                    <strong>
+                        AI Chatbot
+                    </strong>
+                    <span>
+                        24/7 support
+                    </span>
+                </div>
+            </div>
+            <div class="pill">
+                <div class="pill-icon
+                 green">
+                    <i class="fas
+                     fa-video">
+                    </i>
+                </div>
+                <div class="pill-text">
+                    <strong>
+                        Video Consult
+                    </strong>
+                    <span>
+                        Call a doctor
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Doctors Section -->
+        <div class="doctors-section"
+         id="doctors">
+            <h3>
+                <i class="fas
+                 fa-user-md"></i>
+                Available Doctors
+            </h3>
+            <div class="doc-cards">
+
+                <div class="doc-card">
+                    <div class="doc-ava
+                     blue">
+                        <i class="fas
+                         fa-user-md">
+                        </i>
+                    </div>
+                    <div class="doc-info">
+                        <strong>
+                            Dr. Priya Sharma
+                        </strong>
+                        <span>
+                            Psychiatrist
+                        </span>
+                        <span class=
+                        "doc-avail">
+                            🟢 Available
+                        </span>
+                    </div>
+                    <a href=
+                    "tel:+919876543210"
+                     class="call-btn">
+                        <i class="fas
+                         fa-phone"></i>
+                        Call
+                    </a>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-ava
+                     teal">
+                        <i class="fas
+                         fa-user-md">
+                        </i>
+                    </div>
+                    <div class="doc-info">
+                        <strong>
+                            Dr. Rahul Verma
+                        </strong>
+                        <span>
+                            Neurologist
+                        </span>
+                        <span class=
+                        "doc-avail">
+                            🟢 Available
+                        </span>
+                    </div>
+                    <a href=
+                    "tel:+919876543211"
+                     class="call-btn">
+                        <i class="fas
+                         fa-phone"></i>
+                        Call
+                    </a>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-ava
+                     purple">
+                        <i class="fas
+                         fa-user-md">
+                        </i>
+                    </div>
+                    <div class="doc-info">
+                        <strong>
+                            Dr. Anjali Singh
+                        </strong>
+                        <span>
+                            Psychologist
+                        </span>
+                        <span class=
+                        "doc-avail busy">
+                            🔴 Busy
+                        </span>
+                    </div>
+                    <a href=
+                    "tel:+919876543212"
+                     class="call-btn
+                     disabled">
+                        <i class="fas
+                         fa-phone"></i>
+                        Call
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <i class="fas fa-users
+                 stat-ico"></i>
+                <strong>500+</strong>
+                <span>Patients</span>
+            </div>
+            <div class="stat-sep">|</div>
+            <div class="stat-item">
+                <i class="fas
+                 fa-user-md
+                 stat-ico"></i>
+                <strong>20+</strong>
+                <span>Doctors</span>
+            </div>
+            <div class="stat-sep">|</div>
+            <div class="stat-item">
+                <i class="fas
+                 fa-brain stat-ico">
+                </i>
+                <strong>85%</strong>
+                <span>Accuracy</span>
+            </div>
+            <div class="stat-sep">|</div>
+            <div class="stat-item">
+                <i class="fas
+                 fa-clock stat-ico">
+                </i>
+                <strong>24/7</strong>
+                <span>Support</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- RIGHT: Auth Panel -->
+    <aside class="auth-panel">
+
+        <!-- Tab Switcher -->
+        <div class="auth-tabs">
+            <button class="auth-tab
+             active" id="tab-login"
+             onclick="showPanel(
+             'login')">
+                <i class="fas
+                 fa-sign-in-alt"></i>
+                Sign In
+            </button>
+            <button class="auth-tab"
+             id="tab-register"
+             onclick="showPanel(
+             'register')">
+                <i class="fas
+                 fa-user-plus"></i>
+                Sign Up
+            </button>
+        </div>
+
+        <!-- LOGIN PANEL -->
+        <div class="auth-form"
+         id="panel-login">
+
+            <div class="form-header">
+                <i class="fas fa-lock-open
+                 form-icon"></i>
+                <h2>Welcome Back</h2>
+                <p>
+                    Sign in to your
+                    account
+                </p>
+            </div>
+
+            {% if error %}
+            <div class="err-box">
+                <i class="fas
+                 fa-exclamation-triangle">
+                </i>
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <form method="POST"
+             action="/login">
+
+                <div class="inp-wrap">
+                    <i class="fas
+                     fa-envelope
+                     inp-icon"></i>
+                    <input type="email"
+                     name="email"
+                     placeholder=
+                     "Email address"
+                     required>
+                </div>
+
+                <div class="inp-wrap">
+                    <i class="fas fa-lock
+                     inp-icon"></i>
+                    <input type="password"
+                     name="password"
+                     placeholder=
+                     "Password"
+                     required>
+                </div>
+
+                <div class="role-select">
+                    <button type="button"
+                     class="role-btn
+                     active"
+                     onclick="setRole(
+                     'doctor',this)">
+                        <i class="fas
+                         fa-user-md">
+                        </i>
+                        Doctor
+                    </button>
+                    <button type="button"
+                     class="role-btn"
+                     onclick="setRole(
+                     'patient',this)">
+                        <i class="fas
+                         fa-user">
+                        </i>
+                        Patient
+                    </button>
+                </div>
+
+                <button type="submit"
+                 class="submit-btn">
+                    <i class="fas
+                     fa-sign-in-alt">
+                    </i>
+                    Sign In
+                </button>
+
+            </form>
+
+            <div class="demo-box">
+                <p class="demo-lbl">
+                    <i class="fas
+                     fa-info-circle">
+                    </i>
+                    Demo Access
+                </p>
+                <div class="demo-row">
+                    <span class="role-tag
+                     doc">Doctor</span>
+                    <code>
+                        doctor@hospital.com
+                        / doctor123
+                    </code>
+                </div>
+                <div class="demo-row">
+                    <span class="role-tag
+                     pat">Patient</span>
+                    <code>
+                        patient@email.com
+                        / patient123
+                    </code>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- REGISTER PANEL -->
+        <div class="auth-form hidden"
+         id="panel-register">
+
+            <div class="form-header">
+                <i class="fas
+                 fa-user-plus
+                 form-icon"></i>
+                <h2>Create Account</h2>
+                <p>
+                    Join MindCare AI today
+                </p>
+            </div>
+
+            {% if success %}
+            <div class="success-box">
+                <i class="fas
+                 fa-check-circle">
+                </i>
+                Account created!
+                Please sign in.
+            </div>
+            {% endif %}
+
+            <form method="POST"
+             action="/register">
+
+                <div class="inp-wrap">
+                    <i class="fas fa-user
+                     inp-icon"></i>
+                    <input type="text"
+                     name="name"
+                     placeholder=
+                     "Full name"
+                     required>
+                </div>
+
+                <div class="inp-wrap">
+                    <i class="fas
+                     fa-envelope
+                     inp-icon"></i>
+                    <input type="email"
+                     name="email"
+                     placeholder=
+                     "Email address"
+                     required>
+                </div>
+
+                <div class="inp-wrap">
+                    <i class="fas fa-lock
+                     inp-icon"></i>
+                    <input type="password"
+                     name="password"
+                     placeholder=
+                     "Create password"
+                     required>
+                </div>
+
+                <div class="role-select">
+                    <button type="button"
+                     class="role-btn
+                     active"
+                     onclick="setRole(
+                     'patient',this)">
+                        <i class="fas
+                         fa-user">
+                        </i>
+                        Patient
+                    </button>
+                    <button type="button"
+                     class="role-btn"
+                     onclick="setRole(
+                     'doctor',this)">
+                        <i class="fas
+                         fa-user-md">
+                        </i>
+                        Doctor
+                    </button>
+                </div>
+
+                <input type="hidden"
+                 name="role"
+                 id="regRole"
+                 value="patient">
+
+                <button type="submit"
+                 class="submit-btn">
+                    <i class="fas
+                     fa-user-plus">
+                    </i>
+                    Create Account
+                </button>
+
+            </form>
+
+        </div>
+
+    </aside>
+
+</main>
+
+<script>
+function showPanel(panel) {
+    const login =
+        document.getElementById(
+            'panel-login'
+        );
+    const reg =
+        document.getElementById(
+            'panel-register'
+        );
+    const tLogin =
+        document.getElementById(
+            'tab-login'
+        );
+    const tReg =
+        document.getElementById(
+            'tab-register'
+        );
+
+    if (panel === 'login') {
+        login.classList.remove('hidden');
+        reg.classList.add('hidden');
+        tLogin.classList.add('active');
+        tReg.classList.remove('active');
+    } else {
+        reg.classList.remove('hidden');
+        login.classList.add('hidden');
+        tReg.classList.add('active');
+        tLogin.classList.remove('active');
+    }
+}
+
+function setRole(role, btn) {
+    const btns =
+        btn.parentElement
+        .querySelectorAll('.role-btn');
+    btns.forEach(b =>
+        b.classList.remove('active')
+    );
+    btn.classList.add('active');
+
+    const hidden =
+        document.getElementById(
+            'regRole'
+        );
+    if (hidden) hidden.value = role;
+}
+</script>
+
+</body>
+</html>

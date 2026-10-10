@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard — MindCare AI</title>
+<link rel="stylesheet" href="{{
+ url_for('static',
+ filename='css/style.css') }}">
+</head>
+<body class="mbody">
+
+<nav class="tbar">
+    <div class="tleft">
+        🧠 MindCare AI
+    </div>
+    <div class="tright">
+        <span>👤 {{ name }}</span>
+        <span class="bdg">{{ role }}</span>
+        <a href="/logout"
+         class="btn-out">
+            Sign Out
+        </a>
+    </div>
+</nav>
+
+<div class="pg">
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-text">
+            <h2>
+                Good Day, {{ name }}! 👋
+            </h2>
+            <p>
+                AI-Enabled Mental Health
+                Monitoring and Clinical
+                Consultation System
+            </p>
+        </div>
+        <div class="hero-graphic">
+            🧠
+        </div>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="cards-section">
+        <h3 class="section-title">
+            Quick Actions
+        </h3>
+        <div class="g4">
+
+            <a href="/upload"
+             class="tile t-blue">
+                <div class="tile-top">
+                    <span class="tico">
+                        🧠
+                    </span>
+                    <span class="tile-tag">
+                        AI Powered
+                    </span>
+                </div>
+                <h3>Upload fMRI Scan</h3>
+                <p>
+                    Upload brain scan for
+                    AI-powered mental
+                    health analysis
+                </p>
+                <div class="tile-arrow">
+                    →
+                </div>
+            </a>
+
+            <a href="/chatbot"
+             class="tile t-teal">
+                <div class="tile-top">
+                    <span class="tico">
+                        💬
+                    </span>
+                    <span class="tile-tag">
+                        24/7 Online
+                    </span>
+                </div>
+                <h3>AI Chatbot</h3>
+                <p>
+                    Talk to AI mental
+                    health assistant
+                    anytime
+                </p>
+                <div class="tile-arrow">
+                    →
+                </div>
+            </a>
+
+            <div class="tile t-green">
+                <div class="tile-top">
+                    <span class="tico">
+                        📊
+                    </span>
+                    <span class="tile-tag">
+                        Reports
+                    </span>
+                </div>
+                <h3>View Results</h3>
+                <p>
+                    See all your scan
+                    results and AI
+                    diagnosis reports
+                </p>
+                <div class="tile-arrow">
+                    →
+                </div>
+            </div>
+
+            <div class="tile t-purple">
+                <div class="tile-top">
+                    <span class="tico">
+                        🏥
+                    </span>
+                    <span class="tile-tag">
+                        Online
+                    </span>
+                </div>
+                <h3>Consultation</h3>
+                <p>
+                    Connect with mental
+                    health specialists
+                    online
+                </p>
+                <div class="tile-arrow">
+                    →
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="stats-section">
+        <h3 class="section-title">
+            System Overview
+        </h3>
+        <div class="srow">
+            <div class="sbox">
+                <div class="sbox-ico">🧠</div>
+                <span class="snum">116</span>
+                <span class="stxt">
+                    Brain Regions Analyzed
+                </span>
+            </div>
+            <div class="sbox">
+                <div class="sbox-ico">🎯</div>
+                <span class="snum">85%</span>
+                <span class="stxt">
+                    AI Model Accuracy
+                </span>
+            </div>
+            <div class="sbox">
+                <div class="sbox-ico">🤖</div>
+                <span class="snum">SVM</span>
+                <span class="stxt">
+                    Classification Model
+                </span>
+            </div>
+            <div class="sbox">
+                <div class="sbox-ico">📡</div>
+                <span class="snum">fMRI</span>
+                <span class="stxt">
+                    Brain Scan Dataset
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <div class="how-section">
+        <h3 class="section-title">
+            How AI Works
+        </h3>
+        <div class="how-grid">
+            <div class="how-box">
+                <div class="how-num">01</div>
+                <div class="how-ico">📤</div>
+                <h4>Upload Scan</h4>
+                <p>
+                    Patient uploads
+                    fMRI brain scan
+                    file (.nii.gz)
+                </p>
+            </div>
+            <div class="how-arrow">→</div>
+            <div class="how-box">
+                <div class="how-num">02</div>
+                <div class="how-ico">🔬</div>
+                <h4>
+                    Feature Extraction
+                </h4>
+                <p>
+                    AI extracts connectivity
+                    patterns from 116
+                    brain regions
+                </p>
+            </div>
+            <div class="how-arrow">→</div>
+            <div class="how-box">
+                <div class="how-num">03</div>
+                <div class="how-ico">🤖</div>
+                <h4>
+                    SVM Classification
+                </h4>
+                <p>
+                    SVM model classifies
+                    mental health condition
+                    with confidence score
+                </p>
+            </div>
+            <div class="how-arrow">→</div>
+            <div class="how-box">
+                <div class="how-num">04</div>
+                <div class="how-ico">📋</div>
+                <h4>Get Results</h4>
+                <p>
+                    Instant diagnosis with
+                    risk level and doctor
+                    consultation
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

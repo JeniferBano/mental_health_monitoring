@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+ content="width=device-width,
+ initial-scale=1.0">
+<title>Register — Mental Health</title>
+<link rel="stylesheet" href="{{
+ url_for('static',
+ filename='css/style.css') }}">
+</head>
+<body class="login-body">
+<div class="login-wrap">
+    <div class="login-card">
+        <div class="login-top">
+            <span class="lg">🧠</span>
+            <h1>Create Account</h1>
+            <p>Mental Health System</p>
+        </div>
+        {% if error %}
+        <div class="err-box">
+            ⚠️ {{ error }}
+        </div>
+        {% endif %}
+        {% if success %}
+        <div style="background:#e8f5e9;
+         border:1px solid #a5d6a7;
+         color:#2E7D32;
+         padding:12px 16px;
+         border-radius:10px;
+         margin-bottom:15px;
+         font-size:13px;">
+            ✅ {{ success }}
+        </div>
+        {% endif %}
+        <form method="POST"
+         action="/register">
+            <div class="fld">
+                <label>👤 Full Name</label>
+                <input type="text"
+                 name="name"
+                 placeholder=
+                 "Enter your full name"
+                 required>
+            </div>
+            <div class="fld">
+                <label>📧 Email</label>
+                <input type="email"
+                 name="email"
+                 placeholder=
+                 "your@email.com"
+                 required>
+            </div>
+            <div class="fld">
+                <label>🔒 Password</label>
+                <input type="password"
+                 name="password"
+                 placeholder=
+                 "Create password"
+                 required>
+            </div>
+            <div class="fld">
+                <label>🏥 Register As</label>
+                <select name="role"
+                 style="width:100%;
+                 padding:13px 15px;
+                 border:2px solid #e5e5e5;
+                 border-radius:12px;
+                 font-size:14px;
+                 color:#333;
+                 background:white;">
+                    <option value="patient">
+                        👤 Patient
+                    </option>
+                    <option value="doctor">
+                        🏥 Doctor
+                    </option>
+                </select>
+            </div>
+            <button type="submit"
+             class="btn-log"
+             style="margin-top:10px;">
+                CREATE ACCOUNT →
+            </button>
+        </form>
+        <p style="text-align:center;
+         margin-top:15px;
+         font-size:13px;
+         color:#666;">
+            Already have account?
+            <a href="/login"
+             style="color:#0D47A1;
+             font-weight:700;">
+                Login here →
+            </a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
